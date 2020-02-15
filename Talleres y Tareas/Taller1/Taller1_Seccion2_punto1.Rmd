@@ -1,0 +1,42 @@
+---
+title: "Taller 1_Seccion2 _ Punto 1"
+output: html_notebook
+---
+
+Implemente en R o Python un algoritmo que le permita sumar ´unicamente los elementos de la sub
+matriz triangular superior o triangular inferior, dada la matriz cuadrada An. Imprima varias pruebas,
+para diferentes valores de n y exprese f(n) en notaci´on O() con una gr´afica que muestre su orden de
+convergencia.
+
+Se realizo unas submatrices que se suman para crear una matris estos expresan varios valores de convergencia con su grafica .
+
+```{r}
+vec<-sample(1:20,20,replace =TRUE)
+vec
+
+mat<-matrix(vec,nrow = 4, ncol = 5, byrow = TRUE)
+mat[2,1]
+//cambia el orde de la matriz
+tmat<-t(mat)
+tmat
+
+mat1<- matrix(sample(1:9, 9, replace = TRUE), nrow = 3, ncol = 3, byrow = FALSE)
+mat1
+
+mat2 <- matrix(sample(1:9, 9, replace = TRUE), nrow = 3, ncol = 3, byrow = FALSE)
+mat2
+mat3 <- mat1 + mat2
+mat3
+
+# Entonces agregando con rbind y cbind nuevo renglón y nueva columna
+# apply
+mat <- cbind(mat, apply(mat, 1, mean)) 
+mat
+apply(mat, 2, mean)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

@@ -1,0 +1,42 @@
+---
+title: "Taller1_Seccion2_Punto3"
+output: html_notebook
+---
+Para describir la trayectoria de un cohete se tiene el modelo:
+y(t) = 6 + 2, 13t
+2 − 0.0013t
+4
+Donde, y es la altura en [m] y t tiempo en [s]. El cohete esta colocado verticalmente sobre la tierra.
+Utilizando dos m´etodos de soluci´on de ecuaci´on no lineal, encuentre la altura m´axima que alcanza el
+cohete.
+
+///////////////////////////////////////////
+
+Contiene una funcion llamada ecuacion donde guarda la ecuacion que es solicitada por la trayectoria del coeque , y crea varias soluciones,tambien tiene un agregado de un limite de numeros en el resultado
+
+```{r}
+ECUACION<-function(y,t)
+{
+  
+  y<-(6+(2.13*t^ 2)-(0.0013*t^4))
+  round(y , 9)
+  round (t, 9)
+  #redondeamos la cifra en una relativamente grande
+      return(y)
+  
+  x = seq(9, 10, by=0.2)
+  y = x^2 + 0.01
+  plot(y,t, pch = 19, cex = 0.5, col = "blue", asp= 1)
+  abline(h = 0, v =0 , lty = 3)
+}
+
+#donde y es la altura en metros
+#t es el tiempo en segundos
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
