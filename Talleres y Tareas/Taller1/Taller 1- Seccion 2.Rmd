@@ -1,0 +1,99 @@
+---
+title: "Taller 1_Seccion2"
+output: html_notebook
+---
+
+## PUNTO 1
+
+Implemente en R o Python un algoritmo que le permita sumar ´unicamente los elementos de la sub
+matriz triangular superior o triangular inferior, dada la matriz cuadrada An. Imprima varias pruebas,
+para diferentes valores de n y exprese f(n) en notaci´on O() con una gr´afica que muestre su orden de
+convergencia.
+
+Se realizo unas submatrices que se suman para crear una matris estos expresan varios valores de convergencia con su grafica .
+
+```{r}
+vec<-sample(1:20,20,replace =TRUE)
+vec
+
+mat<-matrix(vec,nrow = 4, ncol = 5, byrow = TRUE)
+mat[2,1]
+//cambia el orden de la matriz
+tmat<-t(mat)
+tmat
+
+mat1<- matrix(sample(1:9, 9, replace = TRUE), nrow = 3, ncol = 3, byrow = FALSE)
+mat1
+
+mat2 <- matrix(sample(1:9, 9, replace = TRUE), nrow = 3, ncol = 3, byrow = FALSE)
+mat2
+mat3 <- mat1 + mat2
+mat3
+
+# Entonces agregando con rbind y cbind nuevo renglón y nueva columna
+# apply
+mat <- cbind(mat, apply(mat, 1, mean)) 
+mat
+apply(mat, 2, mean)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+## PUNTO 2
+
+```{r}
+
+#creamos los primeros números naturales al cuadrado
+n<- y^2
+cuadrado <- function(n , val, x_0,err){
+  deltax_k  =  1
+  es  =  0
+  er ? 
+  while (abs ( deltax_k ) >  er ) {
+    deltax_k  = (( val / ( x_k ** ( n - 1 ))) -  x_k ) / n
+    x_k  =  x_k  +  deltax_k
+    it  =  it  +  1
+  }
+}
+
+cat ( " El resultado es " , cuadrado ( n , val , x_0 , err ))
+
+
+#graficando h(x) vs x
+plot.function(f,0,2, pch =19, main = "h(x) en función de x",xlab = " X ",ylab = " h(x) ",col ="black")
+
+#imprime la relación de error -> Convergencia lineal
+points(cuadrado, cuadrado, col = "blue")
+lines(cuadrado, cuadrado, col = "blue")
+
+```
+
+
+## PUNTO 3
+
+```{r}
+ECUACION<-function(y,t)
+{
+  
+  y<-(6+(2.13*t^ 2)-(0.0013*t^4))
+  round(y , 9)
+  round (t, 9)
+  #redondeamos la cifra en una relativamente grande
+      return(y)
+  
+  x = seq(9, 10, by=0.2)
+  y = x^2 + 0.01
+  plot(y,t, pch = 19, cex = 0.5, col = "blue", asp= 1)
+  abline(h = 0, v =0 , lty = 3)
+}
+
+#donde y es la altura en metros
+#t es el tiempo en segundos
+
+```
+
