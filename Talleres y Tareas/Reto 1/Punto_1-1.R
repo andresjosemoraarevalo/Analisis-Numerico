@@ -2,7 +2,7 @@
 
 n<- k #Grado del polinomio es un grado que es asignado ya que puede variar
 x0<-(y)
-a0<-(z) # Término independiente del polinomio de la ecuacion a0x^n + a1x^n-1 + ...
+a0<-(z) # TÃ©rmino independiente del polinomio de la ecuacion a0x^n + a1x^n-1 + ...
 a<-c(1, 2, 3, k + 1) # coeficientes del polinomio desde a1 hasta ... k que es an
 y<-a[n]
 z<-a[n-1]
