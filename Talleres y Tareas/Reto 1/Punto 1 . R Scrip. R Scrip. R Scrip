@@ -1,0 +1,35 @@
+---
+title: "Punto 1"
+output: html_notebook
+---
+
+Problema: Evaluar polinomios o funciones en general tiene muchos problemas, a´un para el software profesional. Como
+se requiere poder evaluar el polinomio en las ra´ıces encontradas, es necesario dedicarle un momento a los
+detalles. Sea P(x) = a0x
+n + a1x
+n−1 + ... + an un polinomio entonces, uno de los problemas que se enfrentan
+es evaluar el polinomio en valor dado x0 de la manera m´as eficiente. Un m´etodo visto es Horner:
+b0 = a0
+bk = ak + bk−1x0(k = 1, ..., n − 1)
+bn = P(x0)
+1. Implemente en R o Python el método de Horner para evaluar f
+0
+(x0), tenga en cuenta la precision de la
+computadora o unidad de redondeo.
+
+Solución: ak + bk -x01
+
+e y<-x0*y+a[j]
+  z<-x0*z+y = bk 
+  
+Ejemplo:
+evaluar el siguiente polinomio - x^4-2x^2+3x-4 - con el número mínimo de multiplicaciones 
+
+Solución: 
+
+	* Resultado de la factorización: (x(x(x(x)-2)+3)-4) 
+
+```{r}
+plot(cars)
+```
+
